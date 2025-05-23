@@ -15,7 +15,7 @@ const input = htmlFiles.reduce((entries, file) => {
 }, {})
 
 export default defineConfig({
-  base: '/ARPatternsWebsite',
+  base: '/ARPatternsWebsite/',
   build: {
     rollupOptions: {
       // copies all the *.html files into the dist folder
