@@ -1,5 +1,6 @@
 {
   "name": "landingpage",
+  "homepage": "https://martinazhaw.github.io/ARPatternsWebsite/",
   "version": "1.0.0",
   "description": "## Run Locally",
   "main": "index.js",
@@ -7,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build --debug",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   },
   "dependencies": {
     "@snap/camera-kit": "^1.5.0",
-    "fast-glob": "^3.3.3"
+    "fast-glob": "^3.3.3",
+    "gh-pages": "^6.3.0"
   }
 }
