@@ -27,7 +27,7 @@ async function startUp() {
   }
   catch (err) {
     const errorMessageElement = document.getElementById('no-camera-connected-error-message');
-    errorMessageElement.innerHTML = "The example can't be loaded because no camera is connected. Connect a camera, then reload the page!";
+    errorMessageElement.innerHTML = "The example can't be loaded because no camera is connected or the website is not permitted to access the camera. Connect a camera and/or allow access to it, then reload the page!";
   }
 
   return [cameraKit, session];
