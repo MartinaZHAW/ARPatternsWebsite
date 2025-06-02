@@ -9,12 +9,15 @@ async function startUp() {
   const liveRenderTarget = document.getElementById('canvas');
   const session = await cameraKit.createSession({ liveRenderTarget });
 
+  const attributionText = document.getElementById('snap_attribution');
+
   let mediaStream = null;
   try {
     mediaStream = await navigator.mediaDevices.getUserMedia({
       video: {
-        // aspectRatio: { exact: 0.56 }
-      }
+        width: { ideal: 1280 },
+        height: { ideal: 720 },
+      },
     });
 
     const source = createMediaStreamSource(mediaStream, {
@@ -24,10 +27,14 @@ async function startUp() {
   
     await session.setSource(source);
     await session.play();
+
+    attributionText.style.display = "inline-flex";
+    liveRenderTarget.style.display = "inline-block";
   }
   catch (err) {
     const errorMessageElement = document.getElementById('no-camera-connected-error-message');
     errorMessageElement.innerHTML = "The example can't be loaded because no camera is connected or the website is not permitted to access the camera. Connect a camera and/or allow access to it, then reload the page!";
+    attributionText.style.display = "none";
   }
 
   return [cameraKit, session];
@@ -37,7 +44,8 @@ let cameraKit;
 let session;
 let first_time = true;
 
-const liveRenderTarget = document.getElementById('canvas');
+const canvas = document.getElementById('canvas');
+canvas.style.display = "none";
 
 function startLens(lensName){
   console.log(first_time);

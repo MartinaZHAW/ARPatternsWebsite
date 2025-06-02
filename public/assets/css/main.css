@@ -1653,6 +1653,11 @@ input[type=radio] + label:before {
   font-family: "Font Awesome 5 Brands";
 }
 
+
+.camera-kit-container {
+  text-align: center;
+}
+
 /* Canvas */
 .canvas {
   border-radius: 0.375em;
@@ -1666,9 +1671,25 @@ input[type=radio] + label:before {
 }
 .canvas.center {
   display: block;
-  margin: 0 auto 3em auto;
+  margin: 0 auto;
   width: 100%;
   width: 100%;
+}
+
+.text-with-icon {
+  display: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.text-with-icon a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.text-with-icon img {
+  height: 1.75em;
 }
 
 @media screen and (min-width: 737px) {

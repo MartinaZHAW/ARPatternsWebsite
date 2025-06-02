@@ -91,10 +91,29 @@
 				</ul>
 
 				<button id="try_it_out" onclick="startLens('segment_overlay')">Try it out</button>
-				<div>
+				<!-- <div>
 					<p id="no-camera-connected-error-message"></p>
 					<span class="canvas center"><canvas id="canvas"></canvas></span>
-				</div>
+					<p class="text-with-icon" id="snap_attribution">
+						Powered by
+						<img src="/ARPatternsWebsite/images/snap_logo.svg" alt="" />
+					</p>
+				</div> -->
+
+				<div class="camera-kit-container">
+					<p id="no-camera-connected-error-message"></p>
+					
+					<span class="canvas center">
+					  <canvas id="canvas"></canvas>
+					</span>
+					
+					<p class="text-with-icon" id="snap_attribution">
+						Powered by
+						<a href="https://ar.snap.com/camera-kit">
+						  <img src="/ARPatternsWebsite/images/snap_logo.svg" alt="Snap Logo"/>
+						</a>
+					</p>					  
+				</div>				  
 
 				</section>
 
